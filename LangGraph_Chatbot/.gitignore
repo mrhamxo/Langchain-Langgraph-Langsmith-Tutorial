@@ -1,5 +1,6 @@
-.env
+myenv/
 __pycache__/
 chatbot.db-shm
 chatbot.db-wal
 chatbot.db
+.env

@@ -1,0 +1,10 @@
+langgraph
+langchain-groq
+langchain-core
+langchain-community
+langchain-core
+langgraph-checkpoint
+langchain_mcp_adapters
+mcp
+fastmcp
+streamlit

@@ -3,13 +3,12 @@ from langgraph.graph.message import add_messages
 from langchain_groq import ChatGroq
 from typing import Annotated, TypedDict
 from langchain_core.messages import BaseMessage
-from langgraph.checkpoint.sqlite import SqliteSaver
+from langgraph_checkpoint.sqlite import SqliteSaver
 from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_core.tools import tool
 import requests
 import os
-
 from dotenv import load_dotenv
 import sqlite3
 
