@@ -65,7 +65,7 @@ client = MultiServerMCPClient(
         "arith": {
             "transport": "stdio",
             "command": "python3",
-            "args": ["/Users/nitish/Desktop/mcp-math-server/main.py"],
+            "args": ["G:/Data Science/Agentic AI/LangChain LangGraph LangSmith/mcp_chatbot/arith_server.py"]
         },
         "expense": {
             "transport": "streamable_http",  # if this fails, try "sse"
