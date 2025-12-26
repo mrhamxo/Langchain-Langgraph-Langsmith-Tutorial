@@ -1,6 +1,7 @@
 from langgraph.graph import StateGraph, START, END
 from typing import TypedDict, Annotated
-from langchain_core.messages import BaseMessage, HumanMessage
+from langchain_core.messages import BaseMessage
+from langchain_groq import ChatGroq
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -8,7 +9,6 @@ from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_core.tools import tool, BaseTool
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
 import aiosqlite
 import requests
 import asyncio
@@ -16,8 +16,10 @@ import threading
 import os
 
 load_dotenv()
+
 # ✅ Get API key from env
 API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
+
 
 # Dedicated async loop for backend tasks
 _ASYNC_LOOP = asyncio.new_event_loop()
@@ -41,7 +43,7 @@ def submit_async_task(coro):
 # -------------------
 # 1. LLM
 # -------------------
-llm_model = ChatGroq(model="llama-3.3-70b-versatile")
+llm = ChatGroq(model="llama-3.3-70b-versatile")
 
 # -------------------
 # 2. Tools
@@ -85,7 +87,7 @@ def load_mcp_tools() -> list[BaseTool]:
 mcp_tools = load_mcp_tools()
 
 tools = [search_tool, get_stock_price, *mcp_tools]
-llm_with_tools = llm_model.bind_tools(tools) if tools else llm_model
+llm_with_tools = llm.bind_tools(tools) if tools else llm
 
 # -------------------
 # 3. State

@@ -1,5 +1,5 @@
 .indices/
 __pycache__
 .env
-myenv/
+myvenv/
 venv/
