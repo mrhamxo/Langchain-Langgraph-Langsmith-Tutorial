@@ -17,8 +17,6 @@ import os
 
 load_dotenv()
 
-# ✅ Get API key from env
-API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
 
 # Dedicated async loop for backend tasks

@@ -4,8 +4,10 @@ langchain-core
 langchain-community
 langchain-core
 langgraph-checkpoint
-langchain_mcp_adapters
+langchain-mcp-adapters
+langchain-huggingface
 mcp
+faiss-cpu
 fastmcp
 streamlit
 aiosqlite

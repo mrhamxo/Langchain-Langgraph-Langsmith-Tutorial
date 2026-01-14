@@ -1,0 +1,5 @@
+langgraph
+langchain_groq
+dotenv
+langgraph-checkpoint-postgres 
+psycopg[binary,pool]
