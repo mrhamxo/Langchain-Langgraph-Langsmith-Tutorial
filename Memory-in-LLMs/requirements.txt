@@ -1,5 +1,8 @@
 langgraph
 langchain_groq
+langchain
 dotenv
 langgraph-checkpoint-postgres 
 psycopg[binary,pool]
+langchain-huggingface
+sentence-transformers
